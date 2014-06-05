@@ -1,0 +1,354 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Library</title>
+    <link href="css/devStyle.css" rel="stylesheet" />
+	<script src="js/jquery-1.10.2.js"></script>
+	<script src="js/library.js"></script>
+	<script src="js/knockout-2.3.0.js"></script>
+    <!-- Fancybox references -->
+    <link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+    <script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+</head>
+
+<body background="#45307f">
+	<div class="classHeader classHeaderColorNIPR">
+    	<span align="center" style="padding-top:0px">This page contains dynamic content - Highest Possible Classification is UNCLASSIFIED//FOR OFFICIAL USE ONLY</span>
+    </div>
+    <div id="table_container" style="margin-top:0px; height:600px; margin-left:0px">
+		<table class="listing" align="left">
+        	<tr>
+            	<td>
+                    <h1 id="listingLabel" class="listingLabel" style="cursor:pointer" onClick="open_win_self('devLibrary.html')"><img src="img/SmallWebsiteLogo3.png"/></h1>
+                </td>
+            </tr>
+			<tr>
+				<td>
+					<h1 id="approvedJMMButton" class="libraryLabel"><img id="approvedJMMIcon" class="closedIcon" /><font color="#FFFFFF">Approved Joint Mission Modules</font></h1>
+				</td>
+            </tr>
+            <tr>
+            	<td>
+            		<table class="library" id="approvedJMMList">
+        				<tbody data-bind="foreach: JMM">
+    						<tr id="approvedJMMFrame">
+								<td>
+	           						<b>&nbsp;&nbsp;&nbsp;</b><a data-bind="attr: {href: url, title: fullName}"><b style="font-size:11px" data-bind="text: name"></b></a>
+	           					</td>
+    						</tr>
+        				</tbody>
+            		</table>
+            	</td>
+            </tr>
+            <tr>
+				<td>
+					<h1 id="approvedJMTButton" class="libraryLabel"><img id="approvedJMTIcon" class="closedIcon" /><font color="#FFFFFF">Approved Joint Mission Threads</font></h1>
+				</td>
+			</tr>
+			<tr>
+				<td>
+            		<table class="library" id="approvedJMTList">
+        				<tbody data-bind="foreach: JMT">
+    						<tr id="approvedJMTFrame">
+								<td>
+	           						<b>&nbsp;&nbsp;&nbsp;</b><a data-bind="attr: {href: url, title: fullName}"><b style="font-size:11px" data-bind="text: name"></b></a>
+    						</tr>
+        				</tbody>
+            		</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h1 id="publicJMMButton" class="libraryLabel"><img id="publicJMMIcon" class="closedIcon" /><font color="#FFFFFF">Public Joint Mission Modules</font></h1>
+				</td>
+			</tr>
+			<tr>
+				<td>
+            		<table class="library" id="publicJMMList">
+<!--        				<tbody data-bind="foreach: JMM">-->
+    						<tr id="publicJMMFrame">
+								<td>
+            						<b>&nbsp;&nbsp;&nbsp;</b><a href="details.html" data-bind="attr:{title: fullName}"><b style="font-size:11px" data-bind="text: name"></b></a>
+            					</td>
+    						</tr>
+<!--        				</tbody>-->
+            		</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h1 id="publicJMTButton" class="libraryLabel"><img id="publicJMTIcon" class="closedIcon" /><font color="#FFFFFF">Public Joint Mission Threads</font></h1>
+				</td>
+			</tr>
+			<tr>
+				<td>
+            		<table class="library" id="publicJMTList">
+<!--        				<tbody data-bind="foreach: JMM">-->
+    						<tr id="PublicJMTFrame">
+								<td>
+            						<b>&nbsp;&nbsp;&nbsp;</b><a href="details.html" data-bind="attr:{title: fullName}"><b style="font-size:11px" data-bind="text: name"></b></a>
+            					</td>
+    						</tr>
+<!--        				</tbody>-->
+            		</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h1 id="myJMMButton" class="libraryLabel"><img id="myJMMIcon" class="closedIcon" /><font color="#FFFFFF">My Joint Mission Modules</font></h1>
+				</td>
+			</tr>
+			<tr>
+				<td>
+            		<table class="library" id="myJMMList">
+<!--        				<tbody data-bind="foreach: JMM">-->
+    						<tr id="myJMMFrame">
+								<td>
+            						<b>&nbsp;&nbsp;&nbsp;</b><a href="details.html" data-bind="attr:{title: fullName}"><b style="font-size:11px" data-bind="text: name"></b></a>
+            					</td>
+    						</tr>
+<!--        				</tbody>-->
+            		</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h1 id="myJMTButton" class="libraryLabel"><img id="myJMTIcon" class="closedIcon" /><font color="#FFFFFF">My Joint Mission Threads</font></h1>
+				</td>
+			</tr>
+			<tr>
+				<td>
+            		<table class="library" id="myJMTList">
+<!--        				<tbody data-bind="foreach: JMM">-->
+    						<tr id="myJMTFrame">
+								<td>
+            						<b>&nbsp;&nbsp;&nbsp;</b><a href="details.html" data-bind="attr:{title: fullName}"><b style="font-size:11px" data-bind="text: name"></b></a>
+            					</td>
+    						</tr>
+<!--        				</tbody>-->
+            		</table>
+				</td>
+			</tr>
+		</table>
+        <table id="details" class="details" align="left" style="margin-left:10px" width="70%">
+        	<tr>
+            	<td>
+                	<div id="startPage" class="startUpPage"><img style="position:fixed;TOP:15%;LEFT:45%" src="img/startUpLogo.png"/></div>
+					<div id="infoList" class="infoList">
+                        <table>
+                            <caption><b><h2 id="summaryShortName"></h2></b></caption>
+                            <tr class="spaceUnder">
+                                <td>Project Classification:</td>
+                                <td id="summaryProjClass" style="padding-left:15px"></td>
+                            </tr>
+                            <tr class="spaceUnder">
+                                <td>Sponser Organization:</td>
+                                <td id="summarySponserOrg" style="padding-left:15px"></td>
+                            </tr>
+                            <tr>
+                                <td>POC Name:</td>
+                                <td id="summaryPOCName" style="padding-left:15px; text-wrap:normal"></td>
+                            </tr>
+                            <tr>
+                                <td>POC Email:</td>
+                                <td id="summaryPOCEmail" style="padding-left:15px"></td>
+                            </tr>
+                            <tr>
+                                <td>POC Organization:</td>
+                                <td id="summaryPOCOrg" style="padding-left:15px"></td>
+                            </tr>
+                            <tr class="spaceUnder">
+                                <td>POC Association</td>
+                                <td id="summaryPOCAssoc" style="padding-left:15px"></td>
+                            </tr>
+                                <td>Approval Status:</td>
+                                <td id="summaryApprovalStatus" style="padding-left:15px"></td>
+                            </tr>
+                            <tr>
+                                <td>Approved By:</td>
+                                <td id="summaryApprovedBy" style="padding-left:15px"></td>
+                            </tr>
+                            <tr>
+                                <td>Approval Date:</td>
+                                <td id="summaryApprovedDate" style="padding-left:15px"></td>
+                            </tr>
+                            <tr>
+                                <td>Version Status:</td>
+                                <td id="summaryVersionStatus" style="padding-left:15px"></td>
+                            </tr>
+                            <tr>
+                                <td>Version Number:</td>
+                                <td id="summaryVersionNumber" style="padding-left:15px"></td>
+                            </tr>
+                            <tr>
+                                <td>Version Date:</td>
+                                <td id="summaryVersionDate" style="padding-left:15px"></td>
+                            </tr>
+                        </table>
+					</div>
+                    <div id="detailsSummary" style="border-bottom-style:groove; border-bottom:4px groove; border-bottom-color:#999; padding: 0px 10px 10px 10px; clear:left">
+                    	<h1 id="summaryName" style="width:100%; text-align:center"></h1>
+                        <table style="background-color:transparent">
+                            <tr valign="top">
+                                <td><p id="summaryDescription" style="width:auto"></p>
+                                	<table>
+                                    	<tr>
+                                        	<td valign="top">
+                                				<div style="float:left" class="tableOfContents">
+                                   					<h2>Contents</h2>
+                                    				<ul style="list-style: none;">
+                                        				<li><a href="#detailsPR"><span style="padding-right:10px">1.</span><span>Process Representation</span></a></li>
+                                        				<li><a href="#detailsInputsOutputs"><span style="padding-right:10px">2.</span><span>Inputs & Outputs</span></a></li>
+                                        				<li><a href="#detailsUJTLMapping"><span style="padding-right:10px">3.</span><span>UJTL Mapping</span></a></li>
+                                        				<li><a href="#detailsReferences"><span style="padding-right:10px">4.</span><span>References</span></a></li>
+                                    				</ul>
+                                				</div>
+                                    		</td>
+                                    	</tr>
+                                    </table>
+								</td>                     
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="detailsPR" class="sectionDivider">
+                    	<h2>1. Process Representation</h2>
+                        <a id="diagramLink" class="various" data-fancybox-type="iframe"><img id="diagramImage"class="diagram" /></a>
+                        <div valign="top" style="padding:0px 0px 0px 20px" align="center">
+                            <button id="summaryExeButton" class="summaryButton" onclick="open_win('http://jmm-web.sd.spawar.navy.mil/atf/ui/jmm/')">Execute</button>
+                            <button id="summaryValidateButton" class="summaryButton" onclick="open_win('http://jmm-web.sd.spawar.navy.mil/atf/ui/jmm/')">Validate</button>
+                            <button id="summaryEditButton" class="summaryButton">Edit</button>
+                        </div>
+                    </div>
+                    <div id="detailsInputsOutputs" class="sectionDivider">
+                    	<h2>2. Inputs & Outputs</h2>
+                    </div>
+                    <div id="detailsUJTLMapping" class="sectionDivider">
+                    	<h2>3. UJTL Mapping</h2>
+                    </div>
+                    <div id="detailsReferences" class="sectionDivider">
+                    	<h2>4. References</h2>
+                        <table id="referenceTable" border="1px" class="table-striped" width="95%" style="padding-bottom:15px">
+                            <tr>
+                            	<th style="padding-left:40px; padding-right:40px; background-color:#CCC"><b>Name</b></th>
+                                <th style="padding-left:30px; padding-right:30px; background-color:#CCC"><b>Files</b></th>
+                                <th style="padding-left:30px; padding-right:30px; background-color:#CCC"><b>Classification</b></th>
+                                <th style="padding-left:30px; padding-right:30px; background-color:#CCC"><b>Version Type</b></th>
+                                <th style="padding-left:30px; padding-right:30px; background-color:#CCC"><b>Version</b></th>
+                                <th style="padding-left:30px; padding-right:30px; background-color:#CCC"><b>Version Date</b></th>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+	<div class="classFooter classHeaderColorNIPR">
+    	<span>This page contains dynamic content - Highest Possible Classification is UNCLASSIFIED//FOR OFFICIAL USE ONLY</span>
+    </div>
+    <script type="text/javascript">
+		
+    	function JMMViewModel() {
+        	var self = this;
+        	self.jmmURI = '/activiti-rest/service/repository/deployments?size=200&category=JMM';
+        	self.jmtURI = '/activiti-rest/service/repository/deployments?size=200&category=JMT';
+			self.processDefIDURI =  '/activiti-rest/service/repository/process-definitions?deploymentId=';
+        	self.JMM = ko.observableArray();
+			self.JMT = ko.observableArray();
+			self.username = "kermit";
+			self.password = "kermit";
+
+        	self.ajax = function(uri, method, data) {
+            	var request = {
+                	url: uri,
+               		type: method,
+                	contentType: "application/json",
+                	accepts: "application/json",
+                	cache: false,
+                	dataType: 'json',
+                	data: JSON.stringify(data),
+                	beforeSend: function (xhr) {
+                    	xhr.setRequestHeader("Authorization", 
+                        	"Basic " + btoa(self.username + ":" + self.password));
+                	},
+                	error: function(jqXHR) {
+                    	console.log("ajax error " + jqXHR.status);
+                	}
+            	};
+            	return $.ajax(request);
+        	}
+			
+       		self.ajax(self.jmmURI, 'GET').done(function(data) {
+            	for (var i = 0; i < data.data.length; i++) {
+					var fullString = data.data[i].name;
+					var fullStringLength = fullString.length;
+					var deploymentId = data.data[i].id;
+					var newProcessDefId = null;
+
+					if (fullStringLength > 36) {
+						var shortString = "-" + fullString.substring(0,35) + "...";
+					} else {
+						var shortString = "-" + fullString;
+					}
+					$.ajax({
+						url: self.processDefIDURI + deploymentId,
+						async: false,
+                		beforeSend: function (xhr) {
+                    		xhr.setRequestHeader("Authorization", 
+                        		"Basic " + btoa(self.username + ":" + self.password));
+                		},
+                		error: function(jqXHR) {
+                    		console.log("ajax error " + jqXHR.status);
+                		},
+						success: function (data) {
+						
+						newProcessDefId = data.data[0].id;
+               			self.JMM.push({
+                   			name: ko.observable(shortString),
+                    		fullName: ko.observable(fullString),
+							url: ko.observable("javascript:setRightSide('" + newProcessDefId + "','" + fullString + "')"),
+						});
+					}
+                	});
+            	}
+        	});
+
+       		self.ajax(self.jmtURI, 'GET').done(function(data) {
+            	for (var i = 0; i < data.data.length; i++) {
+					var fullString = data.data[i].name;
+					var fullStringLength = fullString.length;
+					var deploymentId = data.data[i].id;
+					var newProcessDefId = null;
+
+					if (fullStringLength > 36) {
+						var shortString = "-" + fullString.substring(0,35) + "...";
+					} else {
+						var shortString = "-" + fullString;
+					}
+					$.ajax({
+						url: self.processDefIDURI + deploymentId,
+						async: false,
+                		beforeSend: function (xhr) {
+                    		xhr.setRequestHeader("Authorization", 
+                        		"Basic " + btoa(self.username + ":" + self.password));
+                		},
+                		error: function(jqXHR) {
+                    		console.log("ajax error " + jqXHR.status);
+                		},
+						success: function (data) {
+						
+						newProcessDefId = data.data[0].id;
+               			self.JMT.push({
+                   			name: ko.observable(shortString),
+                    		fullName: ko.observable(fullString),
+							url: ko.observable("javascript:setRightSide('" + newProcessDefId + "','" + fullString + "')"),
+						});
+					}
+                	});
+            	}
+        	});
+    	}
+    	ko.applyBindings(new JMMViewModel(), $()[0]);
+    </script>
+</body>
+</html>

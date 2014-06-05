@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://activiti.org/bpmn20">
+  <process id="JointFires3" name="Joint Fires 3.0" isExecutable="true">
+    <documentation>Process For JOINT FIRES 3.0</documentation>
+    <startEvent id="start" activiti:formKey="wf:submitReviewTask"></startEvent>
+    <sequenceFlow id="flow1" sourceRef="start" targetRef="airTaskingOrder"></sequenceFlow>
+    <userTask id="airTaskingOrder" name="Generate Air Tasking Order" activiti:candidateGroups="J7User"></userTask>
+    <sequenceFlow id="goAirSuportFlow" name="Air Support" sourceRef="exclusivegateway1" targetRef="airForce">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${airForce == 'true'}]]></conditionExpression>
+    </sequenceFlow>
+    <sequenceFlow id="goArmyFlow" name="Artillery" sourceRef="exclusivegateway1" targetRef="army">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${army == 'true'}]]></conditionExpression>
+    </sequenceFlow>
+    <userTask id="airForce" name="Air Force" activiti:candidateGroups="J7User">
+      <documentation>The document was reviewed and approved.</documentation>
+    </userTask>
+    <userTask id="army" name="Army" activiti:candidateGroups="J7User">
+      <documentation>Army: ${army}</documentation>
+    </userTask>
+    <sequenceFlow id="flow5" sourceRef="airForce" targetRef="end"></sequenceFlow>
+    <endEvent id="end"></endEvent>
+    <endEvent id="endevent1" name="End"></endEvent>
+    <sequenceFlow id="flow6" sourceRef="army" targetRef="endevent1"></sequenceFlow>
+    <callActivity id="callNavy" name="Navy" calledElement="NavyFires"></callActivity>
+    <sequenceFlow id="goNavyFlow" name="Naval Fires" sourceRef="exclusivegateway1" targetRef="callNavy">
+      <conditionExpression xsi:type="tFormalExpression"><![CDATA[${navy== 'true'}]]></conditionExpression>
+    </sequenceFlow>
+    <exclusiveGateway id="exclusivegateway1" name="Review Decision"></exclusiveGateway>
+    <endEvent id="endevent2" name="End"></endEvent>
+    
+    <sequenceFlow id="flow7" sourceRef="callNavy" targetRef="endevent2"></sequenceFlow>
+    <userTask id="usertask1" name="Generate Air Space Control Order" activiti:candidateGroups="J7User"></userTask>
+    <sequenceFlow id="flow8" sourceRef="airTaskingOrder" targetRef="usertask1"></sequenceFlow>
+    <userTask id="usertask2" name="Receive COP" activiti:candidateGroups="J7User"></userTask>
+    <sequenceFlow id="flow9" sourceRef="usertask1" targetRef="usertask2"></sequenceFlow>
+    <userTask id="usertask3" name="Receive Target" activiti:candidateGroups="J7User"></userTask>
+    <sequenceFlow id="flow10" sourceRef="usertask2" targetRef="usertask3"></sequenceFlow>
+    <userTask id="usertask4" name="Generate Call For Fire" activiti:candidateGroups="J7User">
+      <extensionElements>
+        <activiti:formProperty id="airForce" name="Air Force" type="boolean" default="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="army" name="Army" type="boolean" default="false" required="true"></activiti:formProperty>
+        <activiti:formProperty id="navy" name="Navy" type="boolean" default="true" required="true"></activiti:formProperty>
+      </extensionElements>
+    </userTask>
+    <sequenceFlow id="flow11" sourceRef="usertask3" targetRef="usertask4"></sequenceFlow>
+    <sequenceFlow id="flow12" sourceRef="usertask4" targetRef="exclusivegateway1"></sequenceFlow>
+    <sequenceFlow id="backToGenerateCallForFireFlow" name="None" sourceRef="exclusivegateway1" targetRef="usertask4"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_JointFires3">
+    <bpmndi:BPMNPlane bpmnElement="JointFires3" id="BPMNPlane_JointFires3">
+      <bpmndi:BPMNShape bpmnElement="start" id="BPMNShape_start">
+        <omgdc:Bounds height="35.0" width="35.0" x="30.0" y="179.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="end" id="BPMNShape_end">
+        <omgdc:Bounds height="35.0" width="35.0" x="1150.0" y="60.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endevent1" id="BPMNShape_endevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="1150.0" y="179.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="airForce" id="BPMNShape_airForce">
+        <omgdc:Bounds height="55.0" width="105.0" x="970.0" y="50.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="army" id="BPMNShape_army">
+        <omgdc:Bounds height="55.0" width="105.0" x="970.0" y="169.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="airTaskingOrder" id="BPMNShape_airTaskingOrder">
+        <omgdc:Bounds height="55.0" width="105.0" x="80.0" y="169.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="callNavy" id="BPMNShape_callNavy">
+        <omgdc:Bounds height="55.0" width="105.0" x="974.0" y="300.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="exclusivegateway1" id="BPMNShape_exclusivegateway1">
+        <omgdc:Bounds height="40.0" width="40.0" x="780.0" y="176.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endevent2" id="BPMNShape_endevent2">
+        <omgdc:Bounds height="35.0" width="35.0" x="1140.0" y="310.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="usertask1" id="BPMNShape_usertask1">
+        <omgdc:Bounds height="58.0" width="129.0" x="210.0" y="168.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="usertask2" id="BPMNShape_usertask2">
+        <omgdc:Bounds height="55.0" width="105.0" x="360.0" y="169.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="usertask3" id="BPMNShape_usertask3">
+        <omgdc:Bounds height="55.0" width="105.0" x="490.0" y="169.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="usertask4" id="BPMNShape_usertask4">
+        <omgdc:Bounds height="55.0" width="105.0" x="630.0" y="169.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="flow1" id="BPMNEdge_flow1">
+        <omgdi:waypoint x="65.0" y="196.0"></omgdi:waypoint>
+        <omgdi:waypoint x="80.0" y="196.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow5" id="BPMNEdge_flow5">
+        <omgdi:waypoint x="1075.0" y="77.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1150.0" y="77.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow6" id="BPMNEdge_flow6">
+        <omgdi:waypoint x="1075.0" y="196.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1150.0" y="196.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="goAirSuportFlow" id="BPMNEdge_goAirSuportFlow">
+        <omgdi:waypoint x="800.0" y="176.0"></omgdi:waypoint>
+        <omgdi:waypoint x="843.0" y="77.0"></omgdi:waypoint>
+        <omgdi:waypoint x="970.0" y="77.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="16.0" width="65.0" x="10.0" y="0.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="goArmyFlow" id="BPMNEdge_goArmyFlow">
+        <omgdi:waypoint x="820.0" y="196.0"></omgdi:waypoint>
+        <omgdi:waypoint x="970.0" y="196.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="16.0" width="44.0" x="-41.0" y="0.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="goNavyFlow" id="BPMNEdge_goNavyFlow">
+        <omgdi:waypoint x="800.0" y="216.0"></omgdi:waypoint>
+        <omgdi:waypoint x="843.0" y="327.0"></omgdi:waypoint>
+        <omgdi:waypoint x="974.0" y="327.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="16.0" width="64.0" x="10.0" y="0.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow7" id="BPMNEdge_flow7">
+        <omgdi:waypoint x="1079.0" y="327.0"></omgdi:waypoint>
+        <omgdi:waypoint x="1140.0" y="327.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow8" id="BPMNEdge_flow8">
+        <omgdi:waypoint x="185.0" y="196.0"></omgdi:waypoint>
+        <omgdi:waypoint x="210.0" y="197.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow9" id="BPMNEdge_flow9">
+        <omgdi:waypoint x="339.0" y="197.0"></omgdi:waypoint>
+        <omgdi:waypoint x="360.0" y="196.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow10" id="BPMNEdge_flow10">
+        <omgdi:waypoint x="465.0" y="196.0"></omgdi:waypoint>
+        <omgdi:waypoint x="490.0" y="196.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow11" id="BPMNEdge_flow11">
+        <omgdi:waypoint x="595.0" y="196.0"></omgdi:waypoint>
+        <omgdi:waypoint x="630.0" y="196.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow12" id="BPMNEdge_flow12">
+        <omgdi:waypoint x="735.0" y="196.0"></omgdi:waypoint>
+        <omgdi:waypoint x="780.0" y="196.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="backToGenerateCallForFireFlow" id="BPMNEdge_backToGenerateCallForFireFlow">
+        <omgdi:waypoint x="800.0" y="216.0"></omgdi:waypoint>
+        <omgdi:waypoint x="728.0" y="310.0"></omgdi:waypoint>
+        <omgdi:waypoint x="682.0" y="310.0"></omgdi:waypoint>
+        <omgdi:waypoint x="682.0" y="224.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="16.0" width="30.0" x="10.0" y="0.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<list>
+	<info>
+		<JMM>Joint Fires 3.0</JMM>
+		<SummaryName>(U) Joint Fires Support (JFS) Tier 1 Joint Mission Module (JMM)</SummaryName>
+		<SummaryDescription>(U) This architecture describes the Joint Fire Support (JFS) Tier I Joint Mission Module (JMM). Its development is in response to Joint Requirements Oversight Council Memorandum (JROCM) XXX-XX, Capability Gap Assessment, and is in compliance with the Chairman of the Joint Chiefs of Staff Instruction (CJCSI) 6212.01E requirement for JMTs to be established and used to document and characterize information and data exchange for interoperability assessments of joint capabilities. It is linked to a single tactical Universal Joint Task (UJT) (UJT TA 3.2.1: Conduct Joint Fires) and several operational fires related UJTs. The Architecture Driven Analysis (ADA) Branch JMT Development Team will follow guidance from the JMT Development and Reuse Concept of Operations (CONOPS) and will rely primarily on Joint Publication (JP) 3-09, Joint Fire Support, as an authoritative source to identify performers, systems, activities, and information exchange requirements. The architecture will be developed within the Tier I construct; meaning it is generic, neither Service nor scenario specific, and therefore, totally reusable. Effective joint fire support depends on planning for the successful performance of the following four basic fire support tasks: support forces in contact, support the CONOPS, synchronize joint fire support, and sustain joint fire support operations. The Architecture Driven Analysis (ADA) Branch, Architecture and Integration Division (AID), Deputy Director for C4 (DDC4), Force Structure, Resources, and Assessment Directorate (J8), Joint Chiefs of Staff (JCS) will support Joint Fires Support Executive Steering Committee (JFS ESC) initiation, development, and revision of architecture products decomposing the high level tasks across the breadth of the Joint Fires thread to include the Plan, Prepare, Execute, and Assess phases of operation.</SummaryDescription>
+		<SummaryShortName>Joint Fires Support (JFS)</SummaryShortName>
+		<SummaryProjClass>Unclass</SummaryProjClass>
+		<SummarySponserOrg>Joint Staff J6</SummarySponserOrg>
+		<SummaryPOCName>Mr. Mike Shifflett</SummaryPOCName>
+		<SummaryPOCEmail>michael.t.shifflett2.civ@mail.mil</SummaryPOCEmail>
+		<SummaryPOCOrg>Joint Fires Support Executive Steering Commitee</SummaryPOCOrg>
+		<SummaryPOCAssoc>Sponser</SummaryPOCAssoc>
+		<SummaryApprovalStatus>UNDEFINED</SummaryApprovalStatus>
+		<SummaryApprovedBy>Sponser</SummaryApprovedBy>
+		<SummaryApprovalDate>test</SummaryApprovalDate>
+		<SummaryVersionStatus>Draft</SummaryVersionStatus>
+		<SummaryVersionNumber>1.0</SummaryVersionNumber>
+		<SummaryVersionDate>11/18/2011</SummaryVersionDate>
+	</info>
+	<info>
+		<JMM>Joint Close Air Support</JMM>
+		<SummaryName>Joint Close Air Support (JCAS) Tier 1 Joint Mission Module (JMM)</SummaryName>
+		<SummaryDescription>(U) Joint Publication JP 3-09.3, “Close Air Support” defines close air support as: “air action by fixed-wing and rotary-wing aircraft against hostile targets that are in close proximity to friendly forces, and requires detailed integration of each air mission with the fire and movement of those forces.” This is not to be confused with the Army’s Close Combat Attack (CCA) which the Army describes as a hasty or deliberate attack by Army aircraft providing air-to-ground fires for friendly units engaged in close combat as part of the Army combined arms team. In CCA, due to capabilities of the aircraft and the enhanced situational awareness of the aircrews, terminal control from ground units or controllers is not necessary. CCA is not synonymous with close air support (CAS).(U) The Joint Fire Support Executive Steering Committee (JFS ESC) is a flag officer/general officer level, Joint Requirements Oversight Council (JROC) approved body established to analyze and resolve joint fire support issues. The JFS ESC provides a joint forum for the Services, Combatant Commands (COCOM), Office of the Secretary of Defense for Cost Assessment and Program Evaluation (OSD CAPE), Office of the Under Secretary of Defense for Acquisition, Technology, and Logistics (OUSD ATandL), Joint Staff, Services, Centers of Excellence, other governmental agencies, and partner nations. The JFS ESC assists the Services and COCOMs in providing enhanced, jointly integrated, interoperable and cost efficient JFS capabilities to the warfighter.(U) The Joint Staff Deputy Director for Command, Control, Communications, and Computers (JS DD C4) Architecture Integration Division (AID) will initiate, develop, and revise architecture products decomposing the high level tasks across the breadth of the CAS thread to include: Planning, Preparation, Execution, and Assessment.</SummaryDescription>
+		<SummaryShortName>Joint Close Air Support (JCAS)</SummaryShortName>
+		<SummaryProjClass>Unclass</SummaryProjClass>
+		<SummarySponserOrg>Joint Staff J6</SummarySponserOrg>
+		<SummaryPOCName>Mrs. Marsha Mullins</SummaryPOCName>
+		<SummaryPOCEmail>marsha.d.mullins4.civ@mail.mil</SummaryPOCEmail>
+		<SummaryPOCOrg>Joint Staff J6</SummaryPOCOrg>
+		<SummaryPOCAssoc>JS J6 DD C2I AID</SummaryPOCAssoc>
+		<SummaryApprovalStatus>Approved</SummaryApprovalStatus>
+		<SummaryApprovedBy>Sponser</SummaryApprovedBy>
+		<SummaryApprovalDate>08/10/2011</SummaryApprovalDate>
+		<SummaryVersionStatus>Final</SummaryVersionStatus>
+		<SummaryVersionNumber>1.0</SummaryVersionNumber>
+		<SummaryVersionDate>08/10/2011</SummaryVersionDate>
+	</info>
+	<info>
+		<JMM>JPR (Joint Personnel Recovery)</JMM>
+		<SummaryName>Joint Personnel Recovery (JPR) Tier 1 Joint Mission Module (JMM)</SummaryName>
+		<SummaryDescription>(U) The Personnel Recovery Integrated Architecture High-Level Operational Concept Graphic (OV-1) depicts key elements of successful DoD personnel recovery actions within a Geographic Combatant Commander’s (GCC) area of responsibility. The OV-1 depicts cases in which a GCC is in charge (either directly or via an established Joint Task Forces [JTF] and cases in which a Chief of Mission is in charge. The OV-1 also depicts key enabling and supporting functions.</SummaryDescription>
+		<SummaryShortName>Joint Personnel Recovery (JPR)</SummaryShortName>
+		<SummaryProjClass>Unclass</SummaryProjClass>
+		<SummarySponserOrg>Joint Staff J6</SummarySponserOrg>
+		<SummaryPOCName>Mrs. Marsha Mullins</SummaryPOCName>
+		<SummaryPOCEmail>marsha.d.mullins4.civ@mail.mil</SummaryPOCEmail>
+		<SummaryPOCOrg>Joint Staff J6</SummaryPOCOrg>
+		<SummaryPOCAssoc>JS J6 DD C2I AID</SummaryPOCAssoc>
+		<SummaryApprovalStatus>Approved</SummaryApprovalStatus>
+		<SummaryApprovedBy>Sponser</SummaryApprovedBy>
+		<SummaryApprovalDate></SummaryApprovalDate>
+		<SummaryVersionStatus>Final</SummaryVersionStatus>
+		<SummaryVersionNumber>1.0</SummaryVersionNumber>
+		<SummaryVersionDate>08/10/2011</SummaryVersionDate>
+	</info>
+	<info>
+		<JMM>JPRMT (Joint Personnel Recovery Mission Thread)</JMM>
+		<SummaryName>Joint Personnel Recovery (JPRMT) Tier 1 Joint Mission Thread (JMT)</SummaryName>
+		<SummaryDescription>(U) The Personnel Recovery Integrated Architecture High-Level Operational Concept Graphic (OV-1) depicts key elements of successful DoD personnel recovery actions within a Geographic Combatant Commander’s (GCC) area of responsibility. The OV-1 depicts cases in which a GCC is in charge (either directly or via an established Joint Task Forces [JTF] and cases in which a Chief of Mission is in charge. The OV-1 also depicts key enabling and supporting functions.</SummaryDescription>
+		<SummaryShortName>Joint Personnel Recovery (JPRMT)</SummaryShortName>
+		<SummaryProjClass>Unclass</SummaryProjClass>
+		<SummarySponserOrg>Joint Staff J6</SummarySponserOrg>
+		<SummaryPOCName>Mrs. Marsha Mullins</SummaryPOCName>
+		<SummaryPOCEmail>marsha.d.mullins4.civ@mail.mil</SummaryPOCEmail>
+		<SummaryPOCOrg>Joint Staff J6</SummaryPOCOrg>
+		<SummaryPOCAssoc>JS J6 DD C2I AID</SummaryPOCAssoc>
+		<SummaryApprovalStatus>Approved</SummaryApprovalStatus>
+		<SummaryApprovedBy>Sponser</SummaryApprovedBy>
+		<SummaryApprovalDate></SummaryApprovalDate>
+		<SummaryVersionStatus>Final</SummaryVersionStatus>
+		<SummaryVersionNumber>1.0</SummaryVersionNumber>
+		<SummaryVersionDate>08/10/2011</SummaryVersionDate>
+	</info>
+</list>
